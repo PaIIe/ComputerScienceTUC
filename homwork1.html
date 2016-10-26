@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="de-DE">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="style/css" href="style.css">
+    </head>
+	<style>
+	body{
+	
+	margin: 20px;
+	background-color: lightgrey;
+	font-family: verdana;
+	}
+	.wrapper{
+	position: relative;
+	overflow: auto;
+	}
+	#top, #left, #right{
+	border-radius: 4px;
+	margin: 2px;
+	}
+	#top{
+		border: 1px solid black;
+		margin: 5px;
+		height: 60px;
+		
+		background-color: green;
+		color: white;
+		
+	}
+	#left
+	{
+		border: 1px solid black;
+	
+		margin: 1px;
+		width: 200px;
+		
+		height: 1000px;
+		bottom: 0;
+		
+		float: left;
+	}
+	#right
+	{
+	margin: 1px;
+	width: 500px;
+	height: 1000px;
+	border: 1px solid black;
+	position: relative;
+	float: right;
+	}
+	.backgroundText{
+	color : orange;
+	font-size: 10em;
+	position:absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+	overflow: hidden;
+	
+	}
+	table{
+	border-collapse: collapse;
+	position: center;
+	padding: 25px;
+	text-align: left;
+	}
+	table, td,th{
+	border: 1px solid black;
+	height: 40px;
+	vertical-align: center;
+	}
+	th{
+	background-color: green;
+	color: white;
+
+	}
+	</style
+    <body>
+	<div class = "container wrapper">
+		<div id = "top">
+			<h1>CSS-Exercise in EVS</h1>
+		</div>
+        <div id="wrapper">
+            <div id="left">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="#">Lecture</a></li>
+                    <li><a href="#">Exercise</a></li>
+                    <li><a href="#">TU Chemnitz</a></li>
+                </ul>
+            </div>
+            <div id="right">
+                <p class="backgroundText">VSR</p>
+                <p class="foregroundText">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                    Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                </p>
+                <p><u>Now comes a central table:</u></p>
+                <table align ="center">
+                    <tr>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Age</th>
+                    </tr>
+                    <tr>
+                        <td>Max</td>
+                        <td>Sampleman</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>Maxi</td>
+                        <td>Samplewoman</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>Maximilian</td>
+                        <td>Musterchild</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="clearLeft"></div>
+        </div>
+    </body>
+</html>
