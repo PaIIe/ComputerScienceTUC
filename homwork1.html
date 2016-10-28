@@ -9,53 +9,51 @@
 	body{
 	
 	margin: 20px;
-	background-color: lightgrey;
+	background-color: #cccccc;
 	font-family: verdana;
 	}
-	.wrapper{
-	position: relative;
+	.wrapper
+	{	
+	position: absolute;	
 	overflow: auto;
+	z-index: -2;
+	background-color: #dddddd;
 	}
-	#top, #left, #right{
-	border-radius: 4px;
-	margin: 2px;
-	}
+	
 	#top{
 		border: 1px solid black;
-		margin: 5px;
+		margin: 0px 0px 20px 0px;
 		height: 100%;
-		width: 99.5%;//with 100% the border would be out of windowspace
-		
-		background-color: green;
-		color: white;
-		
+		max-width: 100%;/*with 100% the border would be out of windowspace*/
+		background-color: #195e59;
+		color: white;		
 	}
+	
 	#left
 	{
-		border: 1px solid black;
-	
-		margin: 1px;
-		width: 10%;
-		height: 100%;
-		bottom: 0;
-		
-		float: left;
+		padding: 5px;
+		float: left;		
+		position: relative;		
+		width: 200px;
+		height: 500px
 	}
 	#right
-	{
-	margin: 1px;
-	width: 89.5%;
-	height: 1000px;
-	border: 1px solid black;
-	position: relative;
+	{	
+	padding: 20px;
 	float: right;
+	width: calc(100% - 255px);
+	height: 100%;	
+	border: 1px ;
+	border-left-style: solid;	
 	}
-	.backgroundText{
-	color : orange;
+	
+	.backgroundText
+	{
+	color : #dfc48d;
 	font-size: 10em;
 	position:absolute;
-	top: 0;
-	left: 0;
+	top: -40px;
+	left: 1;
 	bottom: 0;
 	z-index: -1;
 	overflow: hidden;
@@ -64,20 +62,21 @@
 	table{
 	border-collapse: collapse;
 	position: center;
-	padding: 25px;
+	
 	text-align: left;
 	}
 	table, td,th{
 	border: 1px solid black;
 	height: 40px;
+	padding: 5px;
 	vertical-align: center;
 	}
 	th{
-	background-color: green;
+	background-color: #195e59;
 	color: white;
 
 	}
-	<style>
+	</style>
     <body>
 	<div class = "container wrapper">
 		<div id = "top">
@@ -127,5 +126,5 @@
             <div class="clearLeft"></div>
         </div>
     </body>
-	</style>
+	
 </html>
