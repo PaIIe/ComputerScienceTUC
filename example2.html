@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+    <head>
+        <meta charset="UTF-8" />
+        <style>
+            * {
+                font: 14px normal Arial, sans-serif;
+                color: #000000;
+            }
+            table {
+                margin: 50px auto;
+            }
+            table, td {
+                border: 1px solid #aaa;
+                border-collapse: collapse;
+            }
+            th {
+                padding: 10px;
+                font-weight: bold;
+            }
+            td {
+                background-color: #eeeeee;
+                width: 80px;
+                height: 80px;
+            }
+            table tr td {
+                cursor: pointer;
+            }
+            div#Log {
+                position: absolute;
+                top: 50px;
+                left: 50%;
+                width: 120px;
+                height: 310px;
+                margin-left: 180px;
+                background-color: #eeeeee;
+                border: 1px solid #aaa;
+                padding: 10px;
+                overflow: auto;
+            }
+        </style>
+        <script>
+            var lastField = null;
+            var currentFillColor = ''; // ???
+            var changeCounter = 0;     // ???
+			
+			function displayColorChange(fillColor)
+			{
+			  document.getElementById("Log").innerHTML = "Color Changed";
+			  document.getElementById("Log").style.color = fillColor;
+			}
+			
+			
+            function setField(element) {
+                // element contains the current html element
+				console.log(element);
+				if(changeCounter > 0 && (element == lastField))
+				{
+				  element.style.backgroundColor = '#eeeeee';					  
+				}
+				else
+				{
+				  element.style.backgroundColor = currentFillColor;				  
+				}
+				
+				lastField = element;
+				changeCounter++;
+				
+				if(changeCounter == 10)
+				  alert("You have clicked 10 times on the field!");
+			}
+
+            function setFillColor(color) {
+                // color should be a string
+				
+				if(color == "RED") 
+				{
+				  currentFillColor = '#CC3333';
+				  displayColorChange(currentFillColor);
+				  console.log(currentFillColor);
+				}
+				if(color == "BLUE" )
+				{
+				  currentFillColor = '#3399FF';
+				  displayColorChange(currentFillColor);
+				  console.log(currentFillColor);
+				}
+			    if(color == "GREEN" )
+				{
+				  currentFillColor = '#339933';
+				  displayColorChange(currentFillColor);
+				  console.log(currentFillColor);
+				}
+				if(color == "YELLOW" )
+				{
+				  currentFillColor = '#999933';
+				  displayColorChange(currentFillColor);
+				  console.log(currentFillColor);
+				}
+				
+            }
+			
+			
+
+        </script>
+    </head>
+    <body>
+        <div id="Log"></div>
+        <table>
+            <tbody>
+                <tr>
+                    <td onclick="setField(this)"></td>
+                    <td onclick="setField(this)"></td>
+                    <td onclick="setField(this)"></td>
+                    <td onclick="setField(this)"></td>
+                </tr>
+                <tr>
+                    <td onclick="setField(this)"></td>
+                    <td onclick="setField(this)"></td>
+                    <td onclick="setField(this)"></td>
+                    <td onclick="setField(this)"></td>
+                </tr>
+                <tr>
+                    <td onclick="setField(this)"></td>
+                    <td onclick="setField(this)"></td>
+                    <td onclick="setField(this)"></td>
+                    <td onclick="setField(this)"></td>
+                </tr>
+                <tr>
+                    <td onclick="setField(this)"></td>
+                    <td onclick="setField(this)"></td>
+                    <td onclick="setField(this)"></td>
+                    <td onclick="setField(this)"></td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4">Choose a color:</th>
+                </tr>
+            </thead>
+            <tbody> 
+                <tr>
+                    <td onclick="setFillColor('RED')" style="background-color:#CC3333;"></td>
+                    <td onclick="setFillColor('BLUE')" style="background-color:#3399FF;"></td>
+                    <td onclick="setFillColor('GREEN')" style="background-color:#339933;"></td>
+                    <td onclick="setFillColor('YELLOW')" style="background-color:#999933;"></td>
+                </tr>
+            </tbody>
+        </table>
+	</body>
+</html>
