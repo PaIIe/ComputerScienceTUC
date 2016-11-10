@@ -1,0 +1,99 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.5)  10 NOV 2016 16:54
+entering extended mode
+**./Gliederung1.0.tex
+(Gliederung1.0.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+(F:\TEXMaker\MIKTEX\tex\latex\base\report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(F:\TEXMaker\MIKTEX\tex\latex\base\size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (Gliederung1.0.aux)
+\openout1 = `Gliederung1.0.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+
+(Gliederung1.0.toc)
+\tf@toc=\write3
+\openout3 = `Gliederung1.0.toc'.
+
+ [1
+
+
+{C:/Users/Danny/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Chapter 1.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 7.
+(F:\TEXMaker\MIKTEX\tex\latex\base\omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 7.
+ [2
+
+]
+Chapter 2.
+[3
+
+]
+Chapter 3.
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¤ in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¤ in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¤ in font cmr10!
+[4
+
+]
+Chapter 4.
+[5
+
+]
+Chapter 5.
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¼ in font cmr10!
+[6
+
+] (Gliederung1.0.aux) ) 
+Here is how much of TeX's memory you used:
+ 254 strings out of 493335
+ 2786 string characters out of 3143155
+ 54211 words of memory out of 3000000
+ 3860 multiletter control sequences out of 15000+200000
+ 5717 words of font info for 21 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 21i,4n,19p,144b,147s stack positions out of 5000i,500n,10000p,200000b,50000s
+<F:/TEXMaker/MIKTEX/fonts/type1/public/amsfonts/cm/cmbx1
+0.pfb><F:/TEXMaker/MIKTEX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><F:/TEXMake
+r/MIKTEX/fonts/type1/public/amsfonts/cm/cmr10.pfb><F:/TEXMaker/MIKTEX/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Gliederung1.0.pdf (6 pages, 61007 bytes).
+PDF statistics:
+ 37 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
