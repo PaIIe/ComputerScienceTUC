@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <style>
+            * {
+                font: 14px normal Arial, sans-serif;
+                color: #000000;
+            }
+            table {
+                margin: 50px auto;
+            }
+            table, td {
+                border: 1px solid #aaa;
+                border-collapse: collapse;
+            }
+            th {
+                padding: 10px;
+                font-weight: bold;
+            }
+            td {
+                background-color: #eeeeee;
+                width: 80px;
+                height: 80px;
+            }
+            table:first-child tr td {
+                cursor: pointer;
+            }
+            td[colspan="4"]{
+                text-align:center;
+            }
+        </style>
+        <script>
+            //insert JavaScript code here
+		window.onload = function()
+		{
+		   
+			
+			function getX()
+			{
+			 return document.getElementById("field_x").value;
+			
+	
+			}
+			
+			function getY()
+			{
+			 return document.getElementById("field_y").value;
+		
+			  
+			}
+			function getText()
+			{
+			return document.getElementById("text").value;
+			}
+			
+			function getFields()
+			{
+			
+			var x = getX();
+			var y = getY();
+			var text = getText();
+			setTableCells(x,y);
+			/*DEBUG*/
+			console.log(x);
+			console.log(y);
+			console.log(text);
+			
+			}
+			
+			/*TODOOOO
+			function setTableCells( x,  cell)
+			{
+			var table = document.getElementById("table")[x][cell];
+			table.rows = x;
+			console.log(table);
+			}
+			*/
+			
+			 
+			
+			document.getElementById("mybutton").addEventListener("click", getFields);
+			
+			}
+		
+			//document.getElementById("mybutton").addEventListener("click", getCoordinates());
+	      
+			
+			/*DEBUG
+		
+			window.onload = function(){
+			function displayDate() {
+			console.log(Date());
+			}
+			
+			document.getElementById("mybutton").addEventListener("click", displayDate);
+			*/
+			
+			
+		    
+        </script>
+    </head>
+    <body>
+        <table>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4">Fill a field:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Text: <br/><input type="text" id="text" value=""></td>
+                    <td>Field X: <br/><input type="text" id="field_x" value=""></td>
+                    <td>Field Y: <br/><input type="text" id="field_y" value=""></td>
+                    <td>CSS: <br/><input type="text" id="css" value=""></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><button id="mybutton">Fill</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
