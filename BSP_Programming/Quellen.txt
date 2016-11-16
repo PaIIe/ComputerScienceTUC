@@ -1,0 +1,3 @@
+[1] Mattson, Timothy G., Berna Massingill, and Beverly A Sanders. Patterns for Parallel Programming.Boston: Addison-Wesley, (2005):
+[2]Porter, Tom, and Galyn Susman. "On Site: Creating Lifelike Characters in Pixar Movies". Commun. ACM, 43.1 (2000): 25.
+[3]Gerbessiotis, Alexandras V., and Leslie G Valiant. Direct Bulk-synchronous Parallel Algorithms.Algorithm Theory — SWAT '92(1992): 1 - 18.

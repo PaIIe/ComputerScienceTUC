@@ -54,30 +54,60 @@
 			return document.getElementById("text").value;
 			}
 			
+			function getCSS()
+			{
+			return document.getElementById("css").value;
+			}
+			
 			function getFields()
 			{
 			
 			var x = getX();
 			var y = getY();
 			var text = getText();
-			setTableCells(x,y);
+			/*element contains the current HTML element*/
+			element = setTableCells(x,y);
+			modifyTextWithCss(writeTextIntoCell(element));
+			
 			/*DEBUG*/
 			console.log(x);
 			console.log(y);
 			console.log(text);
+			console.log(element);
+			console.log(getCSS());
 			
 			}
 			
-			/*TODOOOO
+			//TODOOOO
 			function setTableCells( x,  cell)
 			{
-			var table = document.getElementById("table")[x][cell];
-			table.rows = x;
-			console.log(table);
+				/*subtract 1 by x and cell to get the counting starting with 0 goin*/
+				
+				var selectRow = document.getElementsByTagName("tr")[x - 1];		
+				var selectCell = selectRow.getElementsByTagName("td")[cell - 1];
+				
+				//console.log(selectCell);
+				return (selectCell);		
 			}
-			*/
 			
-			 
+			function writeTextIntoCell(element)
+			{
+			    element.innerHTML = getText();
+				return element;
+			}
+			
+			function modifyTextWithCss(element)
+			{
+				var sheet = document.createElement("style");
+				sheet.innerHTML = "color: red; background-color: blue;";//"div" + " " getCSS();
+				/*DEBUG*/
+				console.log(sheet);
+				
+				
+				element.appendChild(sheet);
+				console.log(element);
+			}
+			
 			
 			document.getElementById("mybutton").addEventListener("click", getFields);
 			
@@ -104,7 +134,7 @@
         <table>
             <tbody>
                 <tr>
-                    <td></td>
+                    <td><style>background-color: red;</style> Hello</td>
                     <td></td>
                     <td></td>
                     <td></td>
