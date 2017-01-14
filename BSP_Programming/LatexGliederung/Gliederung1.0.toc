@@ -1,5 +1,10 @@
-\contentsline {chapter}{\numberline {1}Einf\"uhrung}{2}
-\contentsline {chapter}{\numberline {2}Vorstellung BSP}{3}
-\contentsline {chapter}{\numberline {3}Netzwerke in BSP}{4}
-\contentsline {chapter}{\numberline {4}BSP in der Softwareentwicklung}{5}
-\contentsline {chapter}{\numberline {5}Fazit}{6}
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Einleitung}{2}
+\contentsline {section}{\numberline {2}Programmiermodell}{2}
+\contentsline {section}{\numberline {3}Bulk Synchronous Parallel}{2}
+\contentsline {subsection}{\numberline {3.1}Geschichte}{2}
+\contentsline {subsection}{\numberline {3.2}Aufbau einer BSP-Maschine}{3}
+\contentsline {section}{\numberline {4}Netzwerke in BSP}{3}
+\contentsline {section}{\numberline {5}BSP in der Softwareentwicklung}{3}
+\contentsline {section}{\numberline {6}Fazit}{3}
+\contentsline {section}{\numberline {7}Referenzen}{4}

@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.5)  15 JAN 2017 00:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=latex 2017.1.2)  14 JAN 2017 20:53
 entering extended mode
-**./Gliederung1.0.tex
-(Gliederung1.0.tex
+**./BSP-Programmiermodell.tex
+(BSP-Programmiermodell.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
 (F:\TEXMaker\MIKTEX\tex\latex\koma-script\scrartcl.cls
@@ -477,18 +477,10 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (F:\TEXMaker\MIKTEX\tex\latex\00miktex\graphics.cfg
 File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 96.
+Package graphics Info: Driver file: dvips.def on input line 96.
 
-(F:\TEXMaker\MIKTEX\tex\latex\pdftex-def\pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(F:\TEXMaker\MIKTEX\tex\generic\oberdiek\infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-(F:\TEXMaker\MIKTEX\tex\generic\oberdiek\ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count89
+(F:\TEXMaker\MIKTEX\tex\latex\graphics\dvips.def
+File: dvips.def 2015/12/30 v3.0k Driver-dependent file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
@@ -505,12 +497,12 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen113
 \cmidrulekern=\dimen114
 \defaultaddspace=\dimen115
-\@cmidla=\count90
-\@cmidlb=\count91
+\@cmidla=\count89
+\@cmidlb=\count90
 \@aboverulesep=\dimen116
 \@belowrulesep=\dimen117
-\@thisruleclass=\count92
-\@lastruleclass=\count93
+\@thisruleclass=\count91
+\@lastruleclass=\count92
 \@thisrulewidth=\dimen118
 )
 (F:\TEXMaker\MIKTEX\tex\latex\tools\tabularx.sty
@@ -529,7 +521,7 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \TX@old@col=\dimen123
 \TX@target=\dimen124
 \TX@delta=\dimen125
-\TX@cols=\count94
+\TX@cols=\count93
 \TX@ftn=\toks18
 )
 (F:\TEXMaker\MIKTEX\tex\latex\comment\comment.sty
@@ -544,15 +536,20 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 (F:\TEXMaker\MIKTEX\tex\generic\oberdiek\ifpdf.sty
 Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
-Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-
 (F:\TEXMaker\MIKTEX\tex\generic\ifxetex\ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-))
-(F:\TEXMaker\MIKTEX\tex\latex\url\url.sty
-\Urlmuskip=\muskip10
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
+Package pdflscape Info: Auto-detected driver: dvips (dvips) on input line 125.
+
+(F:\TEXMaker\MIKTEX\tex\generic\oberdiek\atbegshi.sty
+Package: atbegshi 2016/05/16 v1.17 At begin shipout hook (HO)
+
+(F:\TEXMaker\MIKTEX\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(F:\TEXMaker\MIKTEX\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
 (F:\TEXMaker\MIKTEX\tex\latex\geometry\geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
@@ -560,9 +557,9 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-\Gm@cnth=\count95
-\Gm@cntv=\count96
-\c@Gm@tempcnt=\count97
+\Gm@cnth=\count94
+\Gm@cntv=\count95
+\c@Gm@tempcnt=\count96
 \Gm@bindingoffset=\dimen126
 \Gm@wd@mp=\dimen127
 \Gm@odd@mp=\dimen128
@@ -573,79 +570,28 @@ Package ifvtex Info: VTeX not detected.
 \Gm@layoutvoffset=\dimen133
 \Gm@dimlist=\toks19
 
-(F:\TEXMaker\MIKTEX\tex\latex\geometry\geometry.cfg)) (Gliederung1.0.aux)
-\openout1 = `Gliederung1.0.aux'.
+(F:\TEXMaker\MIKTEX\tex\latex\geometry\geometry.cfg))
+(BSP-Programmiermodell.aux)
+\openout1 = `BSP-Programmiermodell.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+\AtBeginShipoutBox=\box28
 
-(F:\TEXMaker\MIKTEX\tex\context\base\supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count98
-\scratchdimen=\dimen134
-\scratchbox=\box28
-\nofMPsegments=\count99
-\nofMParguments=\count100
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count101
-\MPscratchDim=\dimen135
-\MPnumerator=\count102
-\makeMPintoPDFobject=\count103
-\everyMPtoPDFconversion=\toks21
-) (F:\TEXMaker\MIKTEX\tex\generic\oberdiek\pdftexcmds.sty
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(F:\TEXMaker\MIKTEX\tex\generic\oberdiek\ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(F:\TEXMaker\MIKTEX\tex\latex\oberdiek\epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-(F:\TEXMaker\MIKTEX\tex\latex\oberdiek\grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-(F:\TEXMaker\MIKTEX\tex\generic\oberdiek\kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-))
-(F:\TEXMaker\MIKTEX\tex\latex\oberdiek\kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-(F:\TEXMaker\MIKTEX\tex\generic\oberdiek\kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-(F:\TEXMaker\MIKTEX\tex\generic\oberdiek\etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
-)
 *geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
+*geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
+* driver: dvips
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -679,65 +625,32 @@ G,.JBIG2,.JB2,.eps]
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 22.
 (F:\TEXMaker\MIKTEX\tex\latex\base\t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) (Gliederung1.0.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 5.
 )
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 22.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 22.
+ (BSP-Programmiermodell.toc)
 \tf@toc=\write4
-\openout4 = `Gliederung1.0.toc'.
-
- [1
-
-{C:/Users/Danny/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 33--37
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 38.
-(F:\TEXMaker\MIKTEX\tex\latex\base\omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 38.
- [2] [3]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 85.
-
-(F:\TEXMaker\MIKTEX\tex\latex\base\t1cmtt.fd
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-Overfull \hbox (5.4502pt too wide) in paragraph at lines 85--86
-[]$\T1/cmtt/m/n/10 https : / / de . wikipedia . org / wiki / Massively _ Parall
-el _ Processing$ \T1/cmr/m/n/10 (Ab-ruf 01.01.2017) 
- []
+\openout4 = `BSP-Programmiermodell.toc'.
 
 
-Overfull \hbox (48.07867pt too wide) in paragraph at lines 87--88
-[]$\T1/cmtt/m/n/10 http : / / www . cse . unt . edu / ~tarau / teaching / parpr
-o / papers / Bulk % 20synchronous % 20parallel .
- []
+[1
 
-[4] (Gliederung1.0.aux) ) 
+
+])
+! Emergency stop.
+<*> ./BSP-Programmiermodell.tex
+                               
+*** (job aborted, no legal \end found)
+
+ 
 Here is how much of TeX's memory you used:
- 5160 strings out of 493335
- 79944 string characters out of 3143155
- 239651 words of memory out of 3000000
- 8600 multiletter control sequences out of 15000+200000
- 8555 words of font info for 21 fonts, out of 3000000 for 9000
+ 4333 strings out of 493336
+ 67449 string characters out of 3143181
+ 219104 words of memory out of 3000000
+ 7814 multiletter control sequences out of 15000+200000
+ 9150 words of font info for 23 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,6n,51p,8521b,281s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Danny\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
-our\jknappen\ec\dpi600\ectt1000.pk> <C:\Users\Danny\AppData\Local\MiKTeX\2.9\fo
-nts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users\Danny\AppData\Local\MiK
-TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1200.pk> <C:\Users\Danny\AppData
-\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Dan
-ny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1000.pk> <C:
-\Users\Danny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx14
-40.pk><F:/TEXMaker/MIKTEX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Gliederung1.0.pdf (4 pages, 84042 bytes).
-PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 43i,6n,51p,8529b,191s stack positions out of 5000i,500n,10000p,200000b,50000s
+Output written on BSP-Programmiermodell.dvi (1 page, 588 bytes).

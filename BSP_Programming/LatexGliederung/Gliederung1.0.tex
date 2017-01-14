@@ -1,20 +1,61 @@
-\documentclass[a4paper,11pt]{report}
+\documentclass[a4paper,10pt]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+ \usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{comment}
+\usepackage{pdflscape}
+\usepackage{url}
+
+\usepackage{geometry}
+\geometry{a4paper, top=25mm, left=40mm, right=25mm, bottom=30mm,
+headsep=10mm, footskip=12mm}
+
+\title{Proseminar Praktische Informatik, BSP-Programmiermodell}
+\author{Danny Hofmann}
+
+
 \begin{document}
 \tableofcontents
+\newpage
 
-\chapter{Einf\"uhrung}
+\section{Einleitung}
+%TooooooooooooooooooooooooooooOODO ABSÄTZE
+
+Paralleles Rechnen stellt Informatiker, Mathematiker und Elektrotechniker vor viele Herausforderungen. Zum einen muss die entsprechende Computer-Hardware dafür ausgelegt sein, effizient und problemlos parallele Probleme zu lösen. Zum anderen muss eine entsprechende Programmiergrundlage existieren damit eine gegeben Hardware-Plattform auch auf einer hohen, abstrakten Programmierebene angesprochen werden kann[1].\\
+Der rasante Fortschritt der Computer-Hardware ermöglicht es, dass es heutzutage recht einfach und günstig ist, ein paralleles System anzuschaffen. Mit dem Einsatz von Multicore-Prozessoren in Endbenutzer Hardware sind auch die ersten parallelen Ansätze in der Mitte der Gesellschaft angekommen. Mit dem Fortschritt der Prozessortechnik und der damit einhergehenden hohen Taktung, ist es möglich sehr viele Befehle pro Sekunde auszuführen. Demzufolge muss ein Konzept erfunden werden, welches möglichst viele Befehle für den Prozessor erzeugt aber nur wenig Programmier-/Schreibarbeit für den Programmentwickler bedeutet.\\
+Im Sinne dieser Seminararbeit, wird im folgenden ein Programmiermodell zur Behandlung von Parallelen Problemen behandelt. Das Bulk Synchronous Parallel (BSP) Modell, dies steht für Massensynchrone Parallelrechner welches den Ansatz hat, dass ein Vielzahl von Prozessoren ihren eigenen Speicher haben(MIMD-Multiple Instruction Multiple Data)[2]. Im folgenden werden einige Grundprinzipien des BSP erläutert und anhand eines simplen Programmierbeispiels anschaulich am Code erklärt.  
+
+\section{Programmiermodell}
+Ein Programmiermodell ist eine Notwendige Abstraktion der Hardware. Es schlägt die Brücke zwischen der eigentlichen Programmiersprache und der zugrundeliegenden ausführenden Hardware[6]. Es ist sinnvoll Abstraktionsebenen zu bilden, man möchte den Programmierer entlasten und die Maschine aber dafür auslasten.
+\\
+\\
+Ein Programmiermodell sollte auch gewissen Ansprüchen genügen, wie in [1] gezeigt gibt es 4 Anforderungen an ein Programmiermodell:
 \begin{itemize}
-\item Wieso gibt es Parallele Programmiermodelle
-\item Zielstellung, Motivation
-\item Anforderungen
+\item Übertragbar - Ein Programm sollte ohne eine komplette Umstrukturierung, oder auch ohne neu Design auf eine andere Plattform übertragbar sein.
+\item Effizient - Modelle sollen die Gesamte Leistung, Möglichkeiten des Parallelensystems ausnutzen.
+\item Einfachheit - Je Einfacher das Modell gehalten ist, mit seinen Befehlen und Regeln, umso einfacher ist es für einen Programmierer schnell, fehlerfreien und damit auch effizienten Code zu schreiben.
+\item Berechenbare Laufzeit - Die Laufzeit eines Codeentwurfs vorauszuberechnen, ist essentiell dafür um aus vielen Möglichkeiten, ein Problem zu Implementieren, die beste herauszufinden.
 \end{itemize}
-\chapter{Vorstellung BSP}
+
+\section{Bulk Synchronous Parallel}
+\subsection{Geschichte}
+Das Modell BSP wurde von einem Britischen Informatiker namens Leslie Valiant, an der Harvard Universität entwickelt. Über die 1980er Jahre entwickelte er seine Vorstellung über ein Paralleles Programmiermodell was davon ausging, dass eine Kommunikation und Synchronisation in einem Parallelen Rechner nicht gleich gegeben oder sogar trivial ist[3]. Nachdem Valiant seine Arbeit 1990 veröffentlichte arbeitete er mit Bill McColl an der Verfeinerung seiner Ideen und Konzepte. 
+McColl führte Mitte der 1990er Jahre ein Internationales Forscherteam an der Oxford Universität. 1997 veröffentlicht McColl seine Arbeit in einem Standard der heutzutage als Oxford BSPlib Standard bekannt ist[4]. In den folge Jahren gibt es verschiedene Umsetzung dieses Standards und auch einige Erweiterungen. Der Oxford BSPlib Standard, fand seine erste Implementierung in Fortran und wurde später in heutzutage gängigen Programmiersprachen implementiert, wie C,C++ oder Java[5].
+\subsection{Aufbau einer BSP-Maschine}
+Um ein BSP-System zu Implementieren werden zunächst einige Dinge benötigt, zum einem handelt es sich um einen MIMD Ansatz, also benötigt man mehrere Prozessoren die einen dedizierten Speicher haben.[1]\\
+Im BSP wird auch eine Kommunikation zwischen den Prozessoren, oft in einem Netzwerk, benötigt. Wie man dieses Netzwerk gestaltet liegt in der Hand des Systemerstellers, es soll routed sein und damit ermöglichen das jeder Prozessor mit jedem anderen Prozessor Daten austauschen kann.\\
+Die Kommunikation ist aber getrennt von jeglicher Synchronisation. Die Synchronisation ist teil der Barriere, welche garantiert, dass der Datenaustausch zwischen den Prozessoren abgeschlossen ist und dann erst die Übertragenen Daten für den einzelnen Prozessor sichtbar werden.
+
 \begin{itemize}
 \item Wo wird BSP eingeordnet
 \item Aufbau, Zweck, Einsatz
 \item Vorteile
 \end{itemize}
-\chapter{Netzwerke in BSP}
+\section{Netzwerke in BSP}
 \begin{itemize}
 \item Erklärung von TCP/IP mit Bezug auf BSP
 \begin{itemize}
@@ -26,19 +67,27 @@
 \item Was wird durch BSP wie optimiert.
 
 \end{itemize}
-\chapter{BSP in der Softwareentwicklung}
+\section{BSP in der Softwareentwicklung}
 \begin{itemize}
 \item Datamining(Bagging)
 \item Neurale Netzwerke und Logic Programming
 \item Eigene Praktische Aufgabe
 \end{itemize}
-\chapter{Fazit}
+\section{Fazit}
 \begin{itemize}
  \item Vorteile
  \item Nachteile
  \item Resümee Nutzen
 \end{itemize}
-
+\section{Referenzen}
+\begin{itemize}
+\item [1] R.Correa et al (eds), Models for Parallel and Dirstibuted Computation. Theory, Algorithmic Techniques and Applications S.: 85-115
+\item [2] \url{https://de.wikipedia.org/wiki/Massively_Parallel_Processing} (Abruf 01.01.2017)
+\item [3] Leslie G. Valiant, A bridging model for parallel computation, Communications of the ACM, Volume 33 Issue 8, Aug. 1990 
+\item [4] \url{http://www.cse.unt.edu/~tarau/teaching/parpro/papers/Bulk%20synchronous%20parallel.pdf} (Abruf 01.01.2017)
+\item [5] \url{http://www.bsp-worldwide.org/implmnts/oxtool/}
+\item [6] \url{https://www.math.tu-cottbus.de/~kd/parallel/vorl/vorl/node18.html}
+\end{itemize}
 
 
 
