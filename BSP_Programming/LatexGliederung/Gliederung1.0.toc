@@ -1,10 +1,12 @@
 \select@language {ngerman}
 \contentsline {section}{\numberline {1}Einleitung}{2}
 \contentsline {section}{\numberline {2}Programmiermodell}{2}
-\contentsline {section}{\numberline {3}Bulk Synchronous Parallel}{2}
-\contentsline {subsection}{\numberline {3.1}Geschichte}{2}
-\contentsline {subsection}{\numberline {3.2}Aufbau einer BSP-Maschine}{3}
-\contentsline {section}{\numberline {4}Netzwerke in BSP}{3}
-\contentsline {section}{\numberline {5}BSP in der Softwareentwicklung}{3}
-\contentsline {section}{\numberline {6}Fazit}{3}
-\contentsline {section}{\numberline {7}Referenzen}{4}
+\contentsline {section}{\numberline {3}Bulk Synchronous Parallel}{3}
+\contentsline {subsection}{\numberline {3.1}Geschichte}{3}
+\contentsline {subsection}{\numberline {3.2}Aufbau einer BSP Maschine}{3}
+\contentsline {subsection}{\numberline {3.3}BSP Algorithmen}{3}
+\contentsline {section}{\numberline {4}Netzwerke in BSP}{4}
+\contentsline {section}{\numberline {5}BSP in der Softwareentwicklung}{4}
+\contentsline {section}{\numberline {6}Fazit}{5}
+\contentsline {section}{\numberline {7}Referenzen}{5}
+\contentsline {section}{\numberline {8}Abbildungen}{5}

@@ -40,18 +40,45 @@ Ein Programmiermodell sollte auch gewissen Ansprüchen genügen, wie in [1] geze
 \item Einfachheit - Je Einfacher das Modell gehalten ist, mit seinen Befehlen und Regeln, umso einfacher ist es für einen Programmierer schnell, fehlerfreien und damit auch effizienten Code zu schreiben.
 \item Berechenbare Laufzeit - Die Laufzeit eines Codeentwurfs vorauszuberechnen, ist essentiell dafür um aus vielen Möglichkeiten, ein Problem zu Implementieren, die beste herauszufinden.
 \end{itemize}
-
+Im folgenden wird das Programmiermodell BSP vorgestellt, welches jede oben genannte Eigenschaft besitzt. Ein Programm welches dem BSP-Modell zugrunde liegt, ist auf jedes BSP geeignete Verteiltesystem portierbar. Es wird die möglichkeit gegeben Rechenlast gleichmäßig über das System zu verteilen. Dem BSPlib Standard liegen nur rund 20 Befehle zu Grunde[1], demzufolge ist es recht überschaulich gehalten und erfüllt den Punkt der Einfachheit. Zuletzt besitzt der BSPlib Standard ein Rechenmodell womit die Performance eines Systems unter bestimmten Umständen bestimmt werden kann.
+\newpage
+ 
 \section{Bulk Synchronous Parallel}
 \subsection{Geschichte}
+\begin{minipage}{0.6\textwidth}
 Das Modell BSP wurde von einem Britischen Informatiker namens Leslie Valiant, an der Harvard Universität entwickelt. Über die 1980er Jahre entwickelte er seine Vorstellung über ein Paralleles Programmiermodell was davon ausging, dass eine Kommunikation und Synchronisation in einem Parallelen Rechner nicht gleich gegeben oder sogar trivial ist[3]. Nachdem Valiant seine Arbeit 1990 veröffentlichte arbeitete er mit Bill McColl an der Verfeinerung seiner Ideen und Konzepte. 
 McColl führte Mitte der 1990er Jahre ein Internationales Forscherteam an der Oxford Universität. 1997 veröffentlicht McColl seine Arbeit in einem Standard der heutzutage als Oxford BSPlib Standard bekannt ist[4]. In den folge Jahren gibt es verschiedene Umsetzung dieses Standards und auch einige Erweiterungen. Der Oxford BSPlib Standard, fand seine erste Implementierung in Fortran und wurde später in heutzutage gängigen Programmiersprachen implementiert, wie C,C++ oder Java[5].
-\subsection{Aufbau einer BSP-Maschine}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+
+\includegraphics[scale=1.3]{LeslieValiantBW.png}
+\captionof{figure}{Leslie Valiant}
+
+
+
+\end{minipage}
+\subsection{Aufbau einer BSP Maschine}
 Um ein BSP-System zu Implementieren werden zunächst einige Dinge benötigt, zum einem handelt es sich um einen MIMD Ansatz, also benötigt man mehrere Prozessoren die einen dedizierten Speicher haben.[1]\\
-Im BSP wird auch eine Kommunikation zwischen den Prozessoren, oft in einem Netzwerk, benötigt. Wie man dieses Netzwerk gestaltet liegt in der Hand des Systemerstellers, es soll routed sein und damit ermöglichen das jeder Prozessor mit jedem anderen Prozessor Daten austauschen kann.\\
-Die Kommunikation ist aber getrennt von jeglicher Synchronisation. Die Synchronisation ist teil der Barriere, welche garantiert, dass der Datenaustausch zwischen den Prozessoren abgeschlossen ist und dann erst die Übertragenen Daten für den einzelnen Prozessor sichtbar werden.
+Im BSP wird auch eine Kommunikation zwischen den Prozessoren, oft in einem Netzwerk, benötigt. Wie man dieses Netzwerk gestaltet liegt zunächst in der Hand des Systemerstellers. Um eine Datenübertragung zwischen den Prozessoren zu gewährleisten müssen die Verbindungen über einen Router laufen, der dafür sorgt das die Prozessoren sich untereinander verständigen können. Die Kommunikation ist getrennt von jeglicher Synchronisation. Die Synchronisation ist teil der Barriere welche garantiert, dass der Datenaustausch zwischen den Prozessoren abgeschlossen ist und erst dann die übertragenen Daten für den einzelnen Prozessor zugänglich werden. Demzufolge arbeiten alle Prozessoren erst weiter, wenn der Datenaustausch abgeschlossen ist. Diesen Vorgang nennt man im BSP-Modell "Barrier-Synchronisation".[1]
+
+\subsection{BSP Algorithmen}
+Wie man schon aus dem Aufbau einer BSP Maschine erkennen kann, besteht auch der Algorithmus eines BSP Programmes aus 3 Teilen. Wie in Abbildung 2 gezeigt wird zuerst die Rechenarbeit die jedem Prozessor zugeteilt wurde abgearbeitet, dann beginnen die Prozessoren untereinander Daten zu verschicken und im letzten Schritt werden diese Daten dann lokal für die einzelnen Prozessoren sichtbar. Diesen Ablauf nennt man einen \textit{Superstep}.\\
+Ein BSP-Algorithmus besteht aus einem oder mehreren Supersteps. In einem Superstep werden möglichst viele Aktionen bzw. Befehle versucht unter zu bringen, damit man alle verteilten Prozessoren möglichst gut auslasten kann, daher auch "Bulk" zu deutsch "Masse oder auch großes Bündel".  	
+
+
+\begin{figure}[h]
+	\centering \includegraphics[scale = 0.4]{superstep.png}
+	
+	\caption{Ein Superstep}
+\end{figure}
+
+\newpage
+
+Im folgenden wird an einem Code Beispiel der Ablauf eines BSP Algorithmus deutlich erklärt. Verwendet wurde dabei eine Bibliothek von Albert-Jan N. Yzelman, welche er in seiner Promotion entwickelte und auch später weiter führte. Die Entwickelte Bibliothek MulticoreBSP für Java und C, ermöglicht es auf modernen Mehrkernprozessoren ein BSP System zu implementieren[7].\\
+Hier wurde ein Simpler ansatz gewählt um die Vorgehensweise zu verdeutlichen. Es wird in einem Superstep über zwei Prozessoren zunächst die Oberfläche und das Volumen einer gegebenen Kugel berechnet. Nach diesem Superstep wird eine Barrierensynchronisation durchgeführt und der erste Prozessor berechnet dann im zweiten Superstep wie viele dieser Kugeln in einen Kubikmeter Würfel passen.
 
 \begin{itemize}
-\item Wo wird BSP eingeordnet
+
 \item Aufbau, Zweck, Einsatz
 \item Vorteile
 \end{itemize}
@@ -87,7 +114,15 @@ Die Kommunikation ist aber getrennt von jeglicher Synchronisation. Die Synchroni
 \item [4] \url{http://www.cse.unt.edu/~tarau/teaching/parpro/papers/Bulk%20synchronous%20parallel.pdf} (Abruf 01.01.2017)
 \item [5] \url{http://www.bsp-worldwide.org/implmnts/oxtool/}
 \item [6] \url{https://www.math.tu-cottbus.de/~kd/parallel/vorl/vorl/node18.html}
+\item [7] \url{www.multicorebsp.com}
 \end{itemize}
+\section{Abbildungen}
+\begin{itemize}
+\item Abbildung 1 \url{http://cacm.acm.org/magazines/2011/6/108643-beauty-and-elegance/fulltext}
+\item Abbildung 2 \url{https://upload.wikimedia.org/wikipedia/en/thumb/e/ee/Bsp.wiki.fig1.svg/768px-Bsp.wiki.fig1.svg.png}
+       
+\end{itemize}
+
 
 
 

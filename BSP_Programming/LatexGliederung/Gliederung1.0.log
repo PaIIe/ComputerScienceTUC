@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.5)  15 JAN 2017 00:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.5)  20 JAN 2017 21:13
 entering extended mode
 **./Gliederung1.0.tex
 (Gliederung1.0.tex
@@ -701,43 +701,77 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 38.
- [2] [3]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 85.
+ [2]
+<LeslieValiantBW.png, id=12, 120.45pt x 120.45pt>
+File: LeslieValiantBW.png Graphic file (type png)
+ <use LeslieValiantBW.png>
+Package pdftex.def Info: LeslieValiantBW.png used on input line 54.
+(pdftex.def)             Requested size: 156.58496pt x 156.58496pt.
+
+Overfull \hbox (2.22166pt too wide) in paragraph at lines 48--60
+$[]$ $[]$ 
+ []
+
+<superstep.png, id=13, 770.88pt x 602.25pt>
+File: superstep.png Graphic file (type png)
+ <use superstep.png>
+Package pdftex.def Info: superstep.png used on input line 70.
+(pdftex.def)             Requested size: 308.34654pt x 240.89572pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./LeslieValiantBW.png (PNG copy)>] [4 <./superstep.png>]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 111.
+
 
 (F:\TEXMaker\MIKTEX\tex\latex\base\t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Overfull \hbox (5.4502pt too wide) in paragraph at lines 85--86
+Overfull \hbox (5.4502pt too wide) in paragraph at lines 111--112
 []$\T1/cmtt/m/n/10 https : / / de . wikipedia . org / wiki / Massively _ Parall
 el _ Processing$ \T1/cmr/m/n/10 (Ab-ruf 01.01.2017) 
  []
 
 
-Overfull \hbox (48.07867pt too wide) in paragraph at lines 87--88
+Overfull \hbox (48.07867pt too wide) in paragraph at lines 113--114
 []$\T1/cmtt/m/n/10 http : / / www . cse . unt . edu / ~tarau / teaching / parpr
 o / papers / Bulk % 20synchronous % 20parallel .
  []
 
-[4] (Gliederung1.0.aux) ) 
+
+Overfull \hbox (5.11731pt too wide) in paragraph at lines 119--120
+[]\T1/cmr/m/n/10 Abbildung 1 $\T1/cmtt/m/n/10 http : / / cacm . acm . org / mag
+azines / 2011 / 6 / 108643-[]beauty-[]and-[]elegance /
+ []
+
+
+Overfull \hbox (19.36346pt too wide) in paragraph at lines 120--121
+[]\T1/cmr/m/n/10 Abbildung 2 $\T1/cmtt/m/n/10 https : / / upload . wikimedia . 
+org / wikipedia / en / thumb / e / ee / Bsp . wiki . fig1 .
+ []
+
+[5] (Gliederung1.0.aux) ) 
 Here is how much of TeX's memory you used:
- 5160 strings out of 493335
- 79944 string characters out of 3143155
- 239651 words of memory out of 3000000
- 8600 multiletter control sequences out of 15000+200000
- 8555 words of font info for 21 fonts, out of 3000000 for 9000
+ 5185 strings out of 493335
+ 80328 string characters out of 3143155
+ 238651 words of memory out of 3000000
+ 8621 multiletter control sequences out of 15000+200000
+ 9241 words of font info for 22 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,6n,51p,8521b,281s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,7n,51p,8521b,281s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Danny\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
 our\jknappen\ec\dpi600\ectt1000.pk> <C:\Users\Danny\AppData\Local\MiKTeX\2.9\fo
 nts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users\Danny\AppData\Local\MiK
-TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1200.pk> <C:\Users\Danny\AppData
-\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Dan
-ny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1000.pk> <C:
-\Users\Danny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx14
-40.pk><F:/TEXMaker/MIKTEX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Gliederung1.0.pdf (4 pages, 84042 bytes).
+TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk> <C:\Users\Danny\AppData
+\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1200.pk> <C:\Users\Dan
+ny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:
+\Users\Danny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx10
+00.pk> <C:\Users\Danny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
+600\ecsx1440.pk><F:/TEXMaker/MIKTEX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Gliederung1.0.pdf (5 pages, 132535 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
+ 286 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
