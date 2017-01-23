@@ -9,10 +9,45 @@
 \usepackage{comment}
 \usepackage{pdflscape}
 \usepackage{url}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{multicol}
+
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+
 
 \usepackage{geometry}
 \geometry{a4paper, top=25mm, left=40mm, right=25mm, bottom=30mm,
 headsep=10mm, footskip=12mm}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  frame=L,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+}
+
+\lstset{escapechar=@,style=customc}
 
 \title{Proseminar Praktische Informatik, BSP-Programmiermodell}
 \author{Danny Hofmann}
@@ -25,8 +60,8 @@ headsep=10mm, footskip=12mm}
 \section{Einleitung}
 %TooooooooooooooooooooooooooooOODO ABSÄTZE
 
-Paralleles Rechnen stellt Informatiker, Mathematiker und Elektrotechniker vor viele Herausforderungen. Zum einen muss die entsprechende Computer-Hardware dafür ausgelegt sein, effizient und problemlos parallele Probleme zu lösen. Zum anderen muss eine entsprechende Programmiergrundlage existieren damit eine gegeben Hardware-Plattform auch auf einer hohen, abstrakten Programmierebene angesprochen werden kann[1].\\
-Der rasante Fortschritt der Computer-Hardware ermöglicht es, dass es heutzutage recht einfach und günstig ist, ein paralleles System anzuschaffen. Mit dem Einsatz von Multicore-Prozessoren in Endbenutzer Hardware sind auch die ersten parallelen Ansätze in der Mitte der Gesellschaft angekommen. Mit dem Fortschritt der Prozessortechnik und der damit einhergehenden hohen Taktung, ist es möglich sehr viele Befehle pro Sekunde auszuführen. Demzufolge muss ein Konzept erfunden werden, welches möglichst viele Befehle für den Prozessor erzeugt aber nur wenig Programmier-/Schreibarbeit für den Programmentwickler bedeutet.\\
+Paralleles Rechnen stellt Informatiker, Mathematiker und Elektrotechniker vor viele Herausforderungen. Zum einen muss die entsprechende Computer-Hardware dafür ausgelegt sein, effizient und problemlos parallele Probleme zu lösen. Zum anderen muss eine entsprechende Programmiergrundlage existieren damit eine gegebene Hardware-Plattform auch auf einer hohen, abstrakten Programmierebene angesprochen werden kann[1].\\
+Der rasante Fortschritt der Computer-Hardware ermöglicht es, dass es heutzutage recht einfach und günstig ist, ein paralleles System anzuschaffen. Mit dem Einsatz von Multicore-Prozessoren in Endbenutzer Hardware sind auch die ersten parallelen Ansätze in der Mitte der Gesellschaft angekommen. Mit dem Voranschreiten der Prozessortechnik und der damit einhergehenden hohen Taktung, ist es möglich sehr viele Befehle pro Sekunde auszuführen. Demzufolge muss ein Konzept erfunden werden, welches möglichst viele Befehle für den Prozessor erzeugt aber nur wenig Programmier-/Schreibarbeit für den Programmentwickler bedeutet.\\
 Im Sinne dieser Seminararbeit, wird im folgenden ein Programmiermodell zur Behandlung von Parallelen Problemen behandelt. Das Bulk Synchronous Parallel (BSP) Modell, dies steht für Massensynchrone Parallelrechner welches den Ansatz hat, dass ein Vielzahl von Prozessoren ihren eigenen Speicher haben(MIMD-Multiple Instruction Multiple Data)[2]. Im folgenden werden einige Grundprinzipien des BSP erläutert und anhand eines simplen Programmierbeispiels anschaulich am Code erklärt.  
 
 \section{Programmiermodell}
@@ -40,7 +75,7 @@ Ein Programmiermodell sollte auch gewissen Ansprüchen genügen, wie in [1] geze
 \item Einfachheit - Je Einfacher das Modell gehalten ist, mit seinen Befehlen und Regeln, umso einfacher ist es für einen Programmierer schnell, fehlerfreien und damit auch effizienten Code zu schreiben.
 \item Berechenbare Laufzeit - Die Laufzeit eines Codeentwurfs vorauszuberechnen, ist essentiell dafür um aus vielen Möglichkeiten, ein Problem zu Implementieren, die beste herauszufinden.
 \end{itemize}
-Im folgenden wird das Programmiermodell BSP vorgestellt, welches jede oben genannte Eigenschaft besitzt. Ein Programm welches dem BSP-Modell zugrunde liegt, ist auf jedes BSP geeignete Verteiltesystem portierbar. Es wird die möglichkeit gegeben Rechenlast gleichmäßig über das System zu verteilen. Dem BSPlib Standard liegen nur rund 20 Befehle zu Grunde[1], demzufolge ist es recht überschaulich gehalten und erfüllt den Punkt der Einfachheit. Zuletzt besitzt der BSPlib Standard ein Rechenmodell womit die Performance eines Systems unter bestimmten Umständen bestimmt werden kann.
+Im folgenden wird das Programmiermodell BSP vorgestellt, welches jede oben genannte Eigenschaft besitzt. Ein Programm welches dem BSP-Modell zugrunde liegt, ist auf jedes BSP geeignete Verteiltesystem portierbar. Es wird die möglichkeit gegeben Rechenlast gleichmäßig über das System zu verteilen. Dem BSPlib Standard liegen nur rund 20 Befehle zu Grunde[5], demzufolge ist es recht überschaulich gehalten und erfüllt den Punkt der Einfachheit. Zuletzt besitzt der BSPlib Standard ein Rechenmodell womit die Performance eines Systems unter bestimmten Umständen bestimmt werden kann.
 \newpage
  
 \section{Bulk Synchronous Parallel}
@@ -74,14 +109,94 @@ Ein BSP-Algorithmus besteht aus einem oder mehreren Supersteps. In einem Superst
 
 \newpage
 
+\subsubsection{Kommunikation}
+Die Kommunikation in einem BSP-System ist zu teilen mit der Kommunikation in einem verteilten System zu vergleichen. Dabei kann man auch verschiedene Ebenen betrachten, Senden und Empfangen einer Nachricht, oder direkter Speicher Austausch. In BSP wird werden alle Nachrichten sofort und ohne Verzögerung versendet. So eine "Massenversendung" hat den Vorteil, dass man eine Obergrenze an Zeit festlegen kann, die eine Kommunikation benötigt und damit zur Berechenbarkeit beiträgt. 
+
+\subsubsection{Barriere}
+Die Strukturierung weg von einer einheitlichen Kommunikation und Synchronisation zur Trennung eben dieser Beiden in Kommunikation und Barrierensychronisation, sieht auf den ersten Blick unnötig aufwändig und kompliziert aus. Wenn man sich aber näher mit den Nachteilen eines einheitlichen Datenaustauschs mit Datenverarbeitung beschäftigt kommt man schnell auf das allgemeine Problem des Deadlocks, oder 	einer anderen Form den Livelock. In BSP geht man diesem Problem der Prozessverklemmung komplett aus dem Weg, eben weil eine Barriere keine Ringförmigen Abhängigkeiten zwischen Daten kreieren kann[4].\\
+Die Optimierung der Barriere ist in einem BSP-System essentiell da, an einer gut Implementierten Barriere die Performance des Systems steht oder fällt. Die StandardBSPlib benutzt als simplen Optimierungsschritt einen Overhead bei den Datenpaketen der den einzelnen Prozessoren sagt wie groß die Pakete sind die er empfängt. Solch ein Ansatz erhöht den benötigten Speicher und die Größe der Nachricht nur minimal, erhöht aber das Potential für Optimierungen enorm. Jeder Prozessor weiß nun wie groß die Pakete sind die er Empfangen wird. Das macht es einfacher Einstellungen bei der Programmierung der Barriere zu setzen[1].
+\newpage
+
+\subsubsection{Code Beispiel}
 Im folgenden wird an einem Code Beispiel der Ablauf eines BSP Algorithmus deutlich erklärt. Verwendet wurde dabei eine Bibliothek von Albert-Jan N. Yzelman, welche er in seiner Promotion entwickelte und auch später weiter führte. Die Entwickelte Bibliothek MulticoreBSP für Java und C, ermöglicht es auf modernen Mehrkernprozessoren ein BSP System zu implementieren[7].\\
-Hier wurde ein Simpler ansatz gewählt um die Vorgehensweise zu verdeutlichen. Es wird in einem Superstep über zwei Prozessoren zunächst die Oberfläche und das Volumen einer gegebenen Kugel berechnet. Nach diesem Superstep wird eine Barrierensynchronisation durchgeführt und der erste Prozessor berechnet dann im zweiten Superstep wie viele dieser Kugeln in einen Kubikmeter Würfel passen.
+Hier wurde ein Simpler Ansatz gewählt um die Vorgehensweise zu verdeutlichen. Es wird in einem Superstep über zwei Prozessoren zunächst die Oberfläche und das Volumen einer gegebenen Kugel berechnet. Nach diesem Superstep wird eine Barrierensynchronisation durchgeführt und der erste Prozessor berechnet dann im zweiten Superstep wie viele dieser Kugeln in einen Kubikmeter Würfel passen. Folgender Code wurde auf einer vier Thread CPU ausgeführt.
+\begin{lstlisting}
+#define _PI 3.14159265358979323846 /*pi*/
+#define circumference 10.0f
+static double rad = circumference / (2 * _PI);
+   
+\end{lstlisting}
+Zuerst werden benötigte Variablen Global in C definiert, PI und der Durchmesser der Kugel. Alle Threads können nun darauf zugreifen, vereinfacht die Anschaulichkeit des Beispiels.
 
-\begin{itemize}
+\begin{lstlisting}
+    double a = 0.0;
+    
+    bsp_begin(1);//Creates Thread 0  
+    //Registers memory location for communication  
+    bsp_push_reg(&a, sizeof(double));   
+    bsp_init(&spmd2_entry, 0, NULL);//prepares Entrypoint for spmd2    
+\end{lstlisting}
+Variable a wird für BSP als Globale Variable Register, worauf dann auch eine Barrieren Synchronisation zugreift. Es wird dann Thread 0  erstellt dieser ermöglicht nun, den ersten Superstep einzuleiten.
 
-\item Aufbau, Zweck, Einsatz
-\item Vorteile
-\end{itemize}
+\begin{lstlisting}
+void spmd2_entry(void)
+{    
+    bsp_begin(2); //Generate 2 Threads
+    double local = 0.0f;//local memory
+    if(bsp_pid() == 1)//Thread 1 Calculates the Sphere volume
+    {       
+        local = (4/3) * _PI * (rad*rad*rad);
+        bsp_push_reg(&local, sizeof (double) ); // Registers memory location for communication
+    }    
+    else //Calculates Area
+    {   local = 4 * _PI * (rad * rad);
+        bsp_push_reg(&local, sizeof (double) );
+    }    
+    bsp_sync();//signals the end of an Superstep and starts global communication
+    bsp_end();//ends the called thread by bsp_begin()
+} 
+
+\end{lstlisting}
+Nachdem im Thread 0 der Superstep eingeleitet wird, beginnt zuerst die lokale Berechnung der einzelnen Threads/CPUs hier rechnen zwei Threads parallel. Beide Threads haben einen lokalen Speicher. Thread 1 berechnet das Volumen der Kugel und Thread 2 die Fläche. Mit bsp\_sync wird dann die Barrierensynchronisation eingeleitet. Beide Threads übergeben nun ihre lokalen Daten an die Barriere. Hier wurde dies durch ein n-Thread großes Array gelöst, Thread 0 schreibt in Element 0, Thread 1 in Element 1 und so weiter.
+
+\newpage
+
+\begin{lstlisting}
+void spmd2_p0(double * const a)
+{
+ /*write Data of Threads in array*/
+    for(unsigned int s = 0; s < bsp_nprocs(); ++s)
+    {
+        bsp_direct_get(s,array,0,array + s, sizeof(double));
+        
+        printf("Thread %d has result: %lf\n", s, array[s]);
+        
+       *(a+s-1) = array [s]; 
+   }
+    
+    free(array);
+}
+\end{lstlisting}
+In der Anfangs definierten Globalen Variable a wird nun der Feldeintrag geschrieben der für die weitere Berechnung erforderlich ist.
+
+\begin{lstlisting}
+if(bsp_pid() == 0){
+    
+	    printf("\nThread 0 calculates how many spheres will fit in an cubic 1 m cube...\n");                 
+        bsp_direct_get(0, &a, 0, &volumeSphere, sizeof(double));}//get data from thread 1     
+    
+        /*cubic 1m = 1 000 000 cubic cm under the assumption the spheres will fill approx. 60% of the given space there is a volume of 600 000 cubic cm to fill*/
+        /*Thread 0 calculates how many Spheres will fit in a cubic 1m square*/
+        int volumeFit = 600000 / volumeSphere;
+        printf("cubic 1m will be filled approx. by %d spheres with %.4f cm circumference.\n", volumeFit, circumference);
+    
+    bsp_end();
+\end{lstlisting}
+Zurück in Thread 0 wird nun die Globale Variable a mit den Errechneten Werten aus dem vorhergehenden Superstep in einem neuen, dem	 zweiten,  verwendet um zu berechnen wie viele dieser Kugeln mit dem berechneten Volumen in einen Kubikmeter Würfel passen.Als letzten Schritt wird errechnete Anzahl noch auf dem Bildschirm ausgegeben und der zweite Superstep kommt zu einem Ende.	
+\newpage
+
+
+
 \section{Netzwerke in BSP}
 \begin{itemize}
 \item Erklärung von TCP/IP mit Bezug auf BSP

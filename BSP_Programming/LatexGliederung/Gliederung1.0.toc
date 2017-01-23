@@ -5,8 +5,11 @@
 \contentsline {subsection}{\numberline {3.1}Geschichte}{3}
 \contentsline {subsection}{\numberline {3.2}Aufbau einer BSP Maschine}{3}
 \contentsline {subsection}{\numberline {3.3}BSP Algorithmen}{3}
-\contentsline {section}{\numberline {4}Netzwerke in BSP}{4}
-\contentsline {section}{\numberline {5}BSP in der Softwareentwicklung}{4}
-\contentsline {section}{\numberline {6}Fazit}{5}
-\contentsline {section}{\numberline {7}Referenzen}{5}
-\contentsline {section}{\numberline {8}Abbildungen}{5}
+\contentsline {subsubsection}{\numberline {3.3.1}Kommunikation}{4}
+\contentsline {subsubsection}{\numberline {3.3.2}Barriere}{4}
+\contentsline {subsubsection}{\numberline {3.3.3}Code Beispiel}{5}
+\contentsline {section}{\numberline {4}Netzwerke in BSP}{7}
+\contentsline {section}{\numberline {5}BSP in der Softwareentwicklung}{7}
+\contentsline {section}{\numberline {6}Fazit}{7}
+\contentsline {section}{\numberline {7}Referenzen}{7}
+\contentsline {section}{\numberline {8}Abbildungen}{7}
