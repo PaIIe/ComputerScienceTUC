@@ -8,8 +8,11 @@
 \contentsline {subsubsection}{\numberline {3.3.1}Kommunikation}{4}
 \contentsline {subsubsection}{\numberline {3.3.2}Barriere}{4}
 \contentsline {subsubsection}{\numberline {3.3.3}Code Beispiel}{5}
+\contentsline {subsection}{\numberline {3.4}Optimierung}{7}
+\contentsline {subsubsection}{\numberline {3.4.1}Message Packing}{7}
+\contentsline {subsubsection}{\numberline {3.4.2}Destination Scheduling}{7}
 \contentsline {section}{\numberline {4}Netzwerke in BSP}{7}
 \contentsline {section}{\numberline {5}BSP in der Softwareentwicklung}{7}
 \contentsline {section}{\numberline {6}Fazit}{7}
-\contentsline {section}{\numberline {7}Referenzen}{7}
-\contentsline {section}{\numberline {8}Abbildungen}{7}
+\contentsline {section}{\numberline {7}Referenzen}{8}
+\contentsline {section}{\numberline {8}Abbildungen}{8}

@@ -152,7 +152,7 @@ void spmd2_entry(void)
     {   local = 4 * _PI * (rad * rad);
         bsp_push_reg(&local, sizeof (double) );
     }    
-    bsp_sync();//signals the end of an Superstep and starts global communication
+    bsp_sync();//signals the end of a Superstep and starts global communication
     bsp_end();//ends the called thread by bsp_begin()
 } 
 
@@ -195,7 +195,14 @@ if(bsp_pid() == 0){
 Zurück in Thread 0 wird nun die Globale Variable a mit den Errechneten Werten aus dem vorhergehenden Superstep in einem neuen, dem	 zweiten,  verwendet um zu berechnen wie viele dieser Kugeln mit dem berechneten Volumen in einen Kubikmeter Würfel passen.Als letzten Schritt wird errechnete Anzahl noch auf dem Bildschirm ausgegeben und der zweite Superstep kommt zu einem Ende.	
 \newpage
 
+\subsection{Optimierung}
+Ein Programmierer ist immer dazu angehalten die Laufzeit seines Systems, und eben auch seines Codes, so klein wie möglich zu halten. Unter der BSPlib gibt es auch einige Ansätze der Optimierung, so wird das Programm eher kaum in den Fokus einer Optimierung gesetzt. Der Großteil der Optimierung findet in der abstrakten BSP Maschine statt und da vor allem in der Kommunikation zwischen den Prozessoren. Im folgenden werden einige implementierte Verbesserungen der BSPlib vorgestellt.
 
+\subsubsection{Message Packing}
+Um die Netzwerklast zu minimieren packt man bei Message Packing mehrere Pakete, die an zwischen zwei Netzwerkteilnehmern verschickt werden, zu einem zusammen. Das Kostenmodell von BSP fordert, dass eine Nachricht von zB. 500-byte genauso viel Speicher und Zeit kosten soll, wie 500 1-byte große Nachrichten. Um diesen Grundsatz zu erfüllen setzt man in der BSPlib Message Packing ein, demzufolge wird der Overhead einmal pro Prozessorpaar beansprucht und nicht bei jeder Nachricht erstellt.
+
+\subsubsection{Destination Scheduling}
+Wie vorher erklärt treten die Prozessoren alle gleichzeitig in die Kommunikation über, also wenn ein Prozessor anfängt Daten zu versenden werden die anderen eben so ihre Daten losschicken. Angenommen alle Prozessoren wollen als ersten Kommunikationsschritt etwas an Prozessor 1 schicken, so ist dieser Prozessor sichtlich schnell überlastet und das Netzwerk fällt in einen Busy-Wait. So ein Vorgehen ist in anderen SPMD Programmiermodellen, oft der Fall und führt daher auch zu Problemen. Die BSPlib geht an solch ein Bomberdamen von Anfragen an einen Prozessor anders um. Zum einen ist die Reihenfolge wie Nachrichten versandt werden nicht festgelegt, sie wird eher zufällig bestimmt[1].
 
 \section{Netzwerke in BSP}
 \begin{itemize}
