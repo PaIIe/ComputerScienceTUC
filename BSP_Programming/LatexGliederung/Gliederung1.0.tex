@@ -206,6 +206,11 @@ Wie vorher erklärt treten die Prozessoren alle gleichzeitig in die Kommunikatio
 \subsubsection{Pacing}
 Ein Netzwerk besteht aus vielen Komponenten, oft behindern sich einige gegenseitig und Formen einen Engpass, oder auch Bottleneck. Ein Bottleneck kann bis zu einer bestimmten Höhe an Transaktionen vollkommen ohne Auswirkungen für ein System sein, nur mit ansteigender Transaktionsrate in dem Netzwerk, steigt auch die Gefahr das ein Bottleneck Einfluss auf die Performance nimmt, oder sogar zu einem Totalausfall führen kann. Um so etwas vorzubeugen benutzt man Pacing. Pacing ist eine Drosselung des Systems, kurz unterhalb der maximal möglichen Übertragungsrate in diesem System. So ist gewährleistet, dass das System nicht in eine Situation kommt auszufallen, es ist im schlimmsten Fall langsam.
 
+\subsection{BSP in der Softwareentwicklung}
+Mit der steigenden Nachfrage von Parallelensystemen werden viele verschiedene Lösungen auf dem Markt angeboten. Eine beliebte Lösung ist heutzutage in Form von Computerclustern zu finden. Ein Cluster, ist im eigentlichen Sinne nur ein Zusammenschluss vieler Rechnereinheiten, also sozusagen über eine Netzwerk verbundene Computer. Cluster sind Modular aufgebaut und bieten die einfache Möglichkeit, Komponenten hinzuzufügen oder auch zu entfernen. \\
+Ein Cluster eignet sich gut um ein BSP-System aufzusetzen. In der Praxis gibt es mehrere Beispielsysteme: Apache Giraph, Molekular dynamische Simulationen und Simulationen für Elektromagnetische Felder. Die zuletzt genannten sind in der Forschung sehr hilfreich und aussagekräftig, mit BSP lassen sich solch Mathematisch Aufwändigen Prozesse in einer akzeptablen Zeit Simulieren und Auswerten. Apache Giraph ist ein Graph Analyse System[8] welches eine große Flexibilität und Skalierbarkeit bietet. Das auf Java aufgesetzte Framework, profitiert von der steigenden Nachfrage von sogenannten Big Data Analytics, also sehr große Datenmengen die man nicht mehr mit konventionellen Methoden der Analyse beherrschen kann, dafür ist die Menge an Daten zu schnell lebig. Facebook hatte im Jahr 2012 einen Datendurchsatz von 200TB pro Stunde[9]. Seit 2013 setzt Facebook, das BSP System Apache Giraph ein, um diese Daten Mengen zu Analysieren und damit seine Suchfunktion, und Werbeschaltungen zu optimieren[10].
+\subsection{Resümee}
+
 \section{Netzwerke in BSP}
 \begin{itemize}
 \item Erklärung von TCP/IP mit Bezug auf BSP
@@ -239,6 +244,9 @@ Ein Netzwerk besteht aus vielen Komponenten, oft behindern sich einige gegenseit
 \item [5] \url{http://www.bsp-worldwide.org/implmnts/oxtool/}
 \item [6] \url{https://www.math.tu-cottbus.de/~kd/parallel/vorl/vorl/node18.html}
 \item [7] \url{www.multicorebsp.com}
+\item [8] \url{http://giraph.apache.org}
+\item [9] \url{Buyya, Rajkumar, Rodrigo N. Calheiros, and Amir Vahid Dastjerdi. Big Data: Principles and Paradigms.Cambridge, MA, USA: Morgan Kaufmann is an imprint of Elsevier, (2016):}
+\item [10] \url{http://www.pcworld.com/article/2046680/facebooks-graph-search-puts-apache-giraph-on-the-map.html}
 \end{itemize}
 \section{Abbildungen}
 \begin{itemize}

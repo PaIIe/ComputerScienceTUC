@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.5)  24 JAN 2017 19:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.5)  25 JAN 2017 21:58
 entering extended mode
 **./Gliederung1.0.tex
 (Gliederung1.0.tex
@@ -846,30 +846,42 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <8> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 124.
  [5] [6] [7]
-Overfull \hbox (5.4502pt too wide) in paragraph at lines 236--237
+Overfull \hbox (5.4502pt too wide) in paragraph at lines 241--242
 []$\T1/cmtt/m/n/10 https : / / de . wikipedia . org / wiki / Massively _ Parall
 el _ Processing$ \T1/cmr/m/n/10 (Ab-ruf 01.01.2017) 
  []
 
 
-Overfull \hbox (48.07867pt too wide) in paragraph at lines 238--239
+Overfull \hbox (48.07867pt too wide) in paragraph at lines 243--244
 []$\T1/cmtt/m/n/10 http : / / www . cse . unt . edu / ~tarau / teaching / parpr
 o / papers / Bulk % 20synchronous % 20parallel .
  []
 
 
-Overfull \hbox (5.11731pt too wide) in paragraph at lines 245--246
+Overfull \hbox (70.57355pt too wide) in paragraph at lines 248--249
+[]$\T1/cmtt/m/n/10 Buyya ,[] Rajkumar ,[] RodrigoN . Calheiros ,[] andAmirVahid
+Dastjerdi . BigData : PrinciplesandParadigms .
+ []
+
+[8]
+Overfull \hbox (99.31714pt too wide) in paragraph at lines 249--250
+[]$\T1/cmtt/m/n/10 http : / / www . pcworld . com / article / 2046680 / faceboo
+ks-[]graph-[]search-[]puts-[]apache-[]giraph-[]on-[]the-[]map .
+ []
+
+
+Overfull \hbox (5.11731pt too wide) in paragraph at lines 253--254
 []\T1/cmr/m/n/10 Abbildung 1 $\T1/cmtt/m/n/10 http : / / cacm . acm . org / mag
 azines / 2011 / 6 / 108643-[]beauty-[]and-[]elegance /
  []
 
 
-Overfull \hbox (19.36346pt too wide) in paragraph at lines 246--247
+Overfull \hbox (19.36346pt too wide) in paragraph at lines 254--255
 []\T1/cmr/m/n/10 Abbildung 2 $\T1/cmtt/m/n/10 https : / / upload . wikimedia . 
 org / wikipedia / en / thumb / e / ee / Bsp . wiki . fig1 .
  []
 
-[8] (Gliederung1.0.aux) ) 
+[9] (Gliederung1.0.aux) ) 
 Here is how much of TeX's memory you used:
  7789 strings out of 493335
  114731 string characters out of 3143155
@@ -890,9 +902,9 @@ ny\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk> <C:
 pen\ec\dpi600\ecsx1000.pk> <C:\Users\Danny\AppData\Local\MiKTeX\2.9\fonts\pk\lj
 four\jknappen\ec\dpi600\ecsx1440.pk><F:/TEXMaker/MIKTEX/fonts/type1/public/amsf
 onts/cm/cmsy10.pfb>
-Output written on Gliederung1.0.pdf (8 pages, 179195 bytes).
+Output written on Gliederung1.0.pdf (9 pages, 188479 bytes).
 PDF statistics:
- 421 PDF objects out of 1000 (max. 8388607)
+ 445 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
