@@ -96,7 +96,7 @@ McColl führte Mitte der 1990er Jahre ein Internationales Forscherteam an der Ox
 Um ein BSP-System zu Implementieren werden zunächst einige Dinge benötigt, zum einem handelt es sich um einen MIMD Ansatz, also benötigt man mehrere Prozessoren die einen dedizierten Speicher haben.[1]\\
 Im BSP wird auch eine Kommunikation zwischen den Prozessoren, oft in einem Netzwerk, benötigt. Wie man dieses Netzwerk gestaltet liegt zunächst in der Hand des Systemerstellers. Um eine Datenübertragung zwischen den Prozessoren zu gewährleisten müssen die Verbindungen über einen Router laufen, der dafür sorgt das die Prozessoren sich untereinander verständigen können. Die Kommunikation ist getrennt von jeglicher Synchronisation. Die Synchronisation ist teil der Barriere welche garantiert, dass der Datenaustausch zwischen den Prozessoren abgeschlossen ist und erst dann die übertragenen Daten für den einzelnen Prozessor zugänglich werden. Demzufolge arbeiten alle Prozessoren erst weiter, wenn der Datenaustausch abgeschlossen ist. Diesen Vorgang nennt man im BSP-Modell "Barrier-Synchronisation".[1]
 
-\subsection{BSP Algorithmen}
+\section{BSP Algorithmen}
 Wie man schon aus dem Aufbau einer BSP Maschine erkennen kann, besteht auch der Algorithmus eines BSP Programmes aus 3 Teilen. Wie in Abbildung 2 gezeigt wird zuerst die Rechenarbeit die jedem Prozessor zugeteilt wurde abgearbeitet, dann beginnen die Prozessoren untereinander Daten zu verschicken und im letzten Schritt werden diese Daten dann lokal für die einzelnen Prozessoren sichtbar. Diesen Ablauf nennt man einen \textit{Superstep}.\\
 Ein BSP-Algorithmus besteht aus einem oder mehreren Supersteps. In einem Superstep werden möglichst viele Aktionen bzw. Befehle versucht unter zu bringen, damit man alle verteilten Prozessoren möglichst gut auslasten kann, daher auch "Bulk" zu deutsch "Masse oder auch großes Bündel".  	
 
@@ -109,15 +109,15 @@ Ein BSP-Algorithmus besteht aus einem oder mehreren Supersteps. In einem Superst
 
 \newpage
 
-\subsubsection{Kommunikation}
+\subsection{Kommunikation}
 Die Kommunikation in einem BSP-System ist zu teilen mit der Kommunikation in einem verteilten System zu vergleichen. Dabei kann man auch verschiedene Ebenen betrachten, Senden und Empfangen einer Nachricht, oder direkter Speicher Austausch. In BSP wird werden alle Nachrichten sofort und ohne Verzögerung versendet. So eine "Massenversendung" hat den Vorteil, dass man eine Obergrenze an Zeit festlegen kann, die eine Kommunikation benötigt und damit zur Berechenbarkeit beiträgt. 
 
-\subsubsection{Barriere}
+\subsection{Barriere}
 Die Strukturierung weg von einer einheitlichen Kommunikation und Synchronisation zur Trennung eben dieser Beiden in Kommunikation und Barrierensychronisation, sieht auf den ersten Blick unnötig aufwändig und kompliziert aus. Wenn man sich aber näher mit den Nachteilen eines einheitlichen Datenaustauschs mit Datenverarbeitung beschäftigt kommt man schnell auf das allgemeine Problem des Deadlocks, oder 	einer anderen Form den Livelock. In BSP geht man diesem Problem der Prozessverklemmung komplett aus dem Weg, eben weil eine Barriere keine Ringförmigen Abhängigkeiten zwischen Daten kreieren kann[4].\\
 Die Optimierung der Barriere ist in einem BSP-System essentiell da, an einer gut Implementierten Barriere die Performance des Systems steht oder fällt. Die StandardBSPlib benutzt als simplen Optimierungsschritt einen Overhead bei den Datenpaketen der den einzelnen Prozessoren sagt wie groß die Pakete sind die er empfängt. Solch ein Ansatz erhöht den benötigten Speicher und die Größe der Nachricht nur minimal, erhöht aber das Potential für Optimierungen enorm. Jeder Prozessor weiß nun wie groß die Pakete sind die er Empfangen wird. Das macht es einfacher Einstellungen bei der Programmierung der Barriere zu setzen[1].
 \newpage
 
-\subsubsection{Code Beispiel}
+\subsection{Code Beispiel}
 Im folgenden wird an einem Code Beispiel der Ablauf eines BSP Algorithmus deutlich erklärt. Verwendet wurde dabei eine Bibliothek von Albert-Jan N. Yzelman, welche er in seiner Promotion entwickelte und auch später weiter führte. Die Entwickelte Bibliothek MulticoreBSP für Java und C, ermöglicht es auf modernen Mehrkernprozessoren ein BSP System zu implementieren[7].\\
 Hier wurde ein Simpler Ansatz gewählt um die Vorgehensweise zu verdeutlichen. Es wird in einem Superstep über zwei Prozessoren zunächst die Oberfläche und das Volumen einer gegebenen Kugel berechnet. Nach diesem Superstep wird eine Barrierensynchronisation durchgeführt und der erste Prozessor berechnet dann im zweiten Superstep wie viele dieser Kugeln in einen Kubikmeter Würfel passen. Folgender Code wurde auf einer vier Thread CPU ausgeführt.
 \begin{lstlisting}
@@ -195,21 +195,22 @@ if(bsp_pid() == 0){
 Zurück in Thread 0 wird nun die Globale Variable a mit den Errechneten Werten aus dem vorhergehenden Superstep in einem neuen, dem	 zweiten,  verwendet um zu berechnen wie viele dieser Kugeln mit dem berechneten Volumen in einen Kubikmeter Würfel passen.Als letzten Schritt wird errechnete Anzahl noch auf dem Bildschirm ausgegeben und der zweite Superstep kommt zu einem Ende.	
 \newpage
 
-\subsection{Optimierung}
+\section{Optimierung}
 Ein Programmierer ist immer dazu angehalten die Laufzeit seines Systems, und eben auch seines Codes, so klein wie möglich zu halten. Unter der BSPlib gibt es auch einige Ansätze der Optimierung, so wird das Programm eher kaum in den Fokus einer Optimierung gesetzt. Der Großteil der Optimierung findet in der abstrakten BSP Maschine statt und da vor allem in der Kommunikation zwischen den Prozessoren. Im folgenden werden einige implementierte Verbesserungen der BSPlib vorgestellt.
 
-\subsubsection{Message Packing}
+\subsection{Message Packing}
 Um die Netzwerklast zu minimieren packt man bei Message Packing mehrere Pakete, die an zwischen zwei Netzwerkteilnehmern verschickt werden, zu einem zusammen. Das Kostenmodell von BSP fordert, dass eine Nachricht von zB. 500-byte genauso viel Speicher und Zeit kosten soll, wie 500 1-byte große Nachrichten. Um diesen Grundsatz zu erfüllen setzt man in der BSPlib Message Packing ein, demzufolge wird der Overhead einmal pro Prozessorpaar beansprucht und nicht bei jeder Nachricht erstellt.
 
-\subsubsection{Destination Scheduling}
+\subsection{Destination Scheduling}
 Wie vorher erklärt treten die Prozessoren alle gleichzeitig in die Kommunikation über, also wenn ein Prozessor anfängt Daten zu versenden werden die anderen eben so ihre Daten losschicken. Angenommen alle Prozessoren wollen als ersten Kommunikationsschritt etwas an Prozessor 1 schicken, so ist dieser Prozessor sichtlich schnell überlastet und das Netzwerk fällt in einen Busy-Wait. So ein Vorgehen ist in anderen SPMD Programmiermodellen, oft der Fall und führt daher auch zu Problemen. Die BSPlib geht an solch ein Bomberdamen von Anfragen an einen Prozessor anders um. Zum einen ist die Reihenfolge wie Nachrichten versandt werden nicht festgelegt, sie wird zufällig bestimmt[1]. Dadurch ist die Wahrscheinlichkeit einer auftretenden Massen Kollision nahezu gebannt und wirkt sich sehr positiv auf die Performance aus.
-\subsubsection{Pacing}
+\subsection{Pacing}
 Ein Netzwerk besteht aus vielen Komponenten, oft behindern sich einige gegenseitig und Formen einen Engpass, oder auch Bottleneck. Ein Bottleneck kann bis zu einer bestimmten Höhe an Transaktionen vollkommen ohne Auswirkungen für ein System sein, nur mit ansteigender Transaktionsrate in dem Netzwerk, steigt auch die Gefahr das ein Bottleneck Einfluss auf die Performance nimmt, oder sogar zu einem Totalausfall führen kann. Um so etwas vorzubeugen benutzt man Pacing. Pacing ist eine Drosselung des Systems, kurz unterhalb der maximal möglichen Übertragungsrate in diesem System. So ist gewährleistet, dass das System nicht in eine Situation kommt auszufallen, es ist im schlimmsten Fall langsam.
 
-\subsection{BSP in der Softwareentwicklung}
+\section{BSP in der Softwareentwicklung}
 Mit der steigenden Nachfrage von Parallelensystemen werden viele verschiedene Lösungen auf dem Markt angeboten. Eine beliebte Lösung ist heutzutage in Form von Computerclustern zu finden. Ein Cluster, ist im eigentlichen Sinne nur ein Zusammenschluss vieler Rechnereinheiten, also sozusagen über eine Netzwerk verbundene Computer. Cluster sind Modular aufgebaut und bieten die einfache Möglichkeit, Komponenten hinzuzufügen oder auch zu entfernen. \\
-Ein Cluster eignet sich gut um ein BSP-System aufzusetzen. In der Praxis gibt es mehrere Beispielsysteme: Apache Giraph, Molekular dynamische Simulationen und Simulationen für Elektromagnetische Felder. Die zuletzt genannten sind in der Forschung sehr hilfreich und aussagekräftig, mit BSP lassen sich solch Mathematisch Aufwändigen Prozesse in einer akzeptablen Zeit Simulieren und Auswerten. Apache Giraph ist ein Graph Analyse System[8] welches eine große Flexibilität und Skalierbarkeit bietet. Das auf Java aufgesetzte Framework, profitiert von der steigenden Nachfrage von sogenannten Big Data Analytics, also sehr große Datenmengen die man nicht mehr mit konventionellen Methoden der Analyse beherrschen kann, dafür ist die Menge an Daten zu schnell lebig. Facebook hatte im Jahr 2012 einen Datendurchsatz von 200TB pro Stunde[9]. Seit 2013 setzt Facebook, das BSP System Apache Giraph ein, um diese Daten Mengen zu Analysieren und damit seine Suchfunktion, und Werbeschaltungen zu optimieren[10].
-\subsection{Resümee}
+Ein Cluster eignet sich gut um ein BSP-System aufzusetzen. In der Praxis gibt es mehrere Beispielsysteme: Apache Giraph, Molekular dynamische Simulationen und Simulationen für Elektromagnetische Felder. Die zuletzt genannten sind in der Forschung sehr hilfreich und aussagekräftig, mit BSP lassen sich solch Mathematisch Aufwändigen Prozesse in einer akzeptablen Zeit Simulieren und Auswerten. Apache Giraph ist ein Graph Analyse System[8] welches eine große Flexibilität und Skalierbarkeit bietet. Das auf Java aufgesetzte Framework, profitiert von der steigenden Nachfrage von sogenannten Big Data Analytics, also sehr große Datenmengen die man nicht mehr mit konventionellen Methoden der Analyse beherrschen kann, dafür ist die Menge an Daten zu schnell lebig. Facebook hatte im Jahr 2012 einen Datendurchsatz von 200TB pro Stunde[9]. Seit 2013 setzt Facebook, das BSP System Apache Giraph ein, um diese Daten Mengen zu Analysieren und Greifbar zu machen. Mit den gewonnen Erkenntnissen wird die Suchfunktion, und die Werbeschaltungen für den Individuellen Nutzer optimiert[10].
+\section{Zusammenfassung}
+Mit der Entwicklung von Bulk Synchronous Parallell, wurden einige 
 
 \section{Netzwerke in BSP}
 \begin{itemize}
@@ -235,6 +236,7 @@ Ein Cluster eignet sich gut um ein BSP-System aufzusetzen. In der Praxis gibt es
  \item Nachteile
  \item Resümee Nutzen
 \end{itemize}
+\newpage
 \section{Referenzen}
 \begin{itemize}
 \item [1] R.Correa et al (eds), Models for Parallel and Dirstibuted Computation. Theory, Algorithmic Techniques and Applications S.: 85-115

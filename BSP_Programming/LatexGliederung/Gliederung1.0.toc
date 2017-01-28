@@ -4,18 +4,18 @@
 \contentsline {section}{\numberline {3}Bulk Synchronous Parallel}{3}
 \contentsline {subsection}{\numberline {3.1}Geschichte}{3}
 \contentsline {subsection}{\numberline {3.2}Aufbau einer BSP Maschine}{3}
-\contentsline {subsection}{\numberline {3.3}BSP Algorithmen}{3}
-\contentsline {subsubsection}{\numberline {3.3.1}Kommunikation}{4}
-\contentsline {subsubsection}{\numberline {3.3.2}Barriere}{4}
-\contentsline {subsubsection}{\numberline {3.3.3}Code Beispiel}{5}
-\contentsline {subsection}{\numberline {3.4}Optimierung}{7}
-\contentsline {subsubsection}{\numberline {3.4.1}Message Packing}{7}
-\contentsline {subsubsection}{\numberline {3.4.2}Destination Scheduling}{7}
-\contentsline {subsubsection}{\numberline {3.4.3}Pacing}{7}
-\contentsline {subsection}{\numberline {3.5}BSP in der Softwareentwicklung}{7}
-\contentsline {subsection}{\numberline {3.6}Res\IeC {\"u}mee}{8}
-\contentsline {section}{\numberline {4}Netzwerke in BSP}{8}
-\contentsline {section}{\numberline {5}BSP in der Softwareentwicklung}{8}
-\contentsline {section}{\numberline {6}Fazit}{8}
-\contentsline {section}{\numberline {7}Referenzen}{8}
-\contentsline {section}{\numberline {8}Abbildungen}{9}
+\contentsline {section}{\numberline {4}BSP Algorithmen}{3}
+\contentsline {subsection}{\numberline {4.1}Kommunikation}{4}
+\contentsline {subsection}{\numberline {4.2}Barriere}{4}
+\contentsline {subsection}{\numberline {4.3}Code Beispiel}{5}
+\contentsline {section}{\numberline {5}Optimierung}{7}
+\contentsline {subsection}{\numberline {5.1}Message Packing}{7}
+\contentsline {subsection}{\numberline {5.2}Destination Scheduling}{7}
+\contentsline {subsection}{\numberline {5.3}Pacing}{7}
+\contentsline {section}{\numberline {6}BSP in der Softwareentwicklung}{7}
+\contentsline {section}{\numberline {7}Zusammenfassung}{8}
+\contentsline {section}{\numberline {8}Netzwerke in BSP}{8}
+\contentsline {section}{\numberline {9}BSP in der Softwareentwicklung}{8}
+\contentsline {section}{\numberline {10}Fazit}{8}
+\contentsline {section}{\numberline {11}Referenzen}{9}
+\contentsline {section}{\numberline {12}Abbildungen}{9}
