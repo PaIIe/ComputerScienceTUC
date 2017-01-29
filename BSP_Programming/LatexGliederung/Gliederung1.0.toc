@@ -15,7 +15,7 @@
 \contentsline {section}{\numberline {6}BSP in der Softwareentwicklung}{7}
 \contentsline {section}{\numberline {7}Zusammenfassung}{8}
 \contentsline {section}{\numberline {8}Netzwerke in BSP}{8}
-\contentsline {section}{\numberline {9}BSP in der Softwareentwicklung}{8}
-\contentsline {section}{\numberline {10}Fazit}{8}
-\contentsline {section}{\numberline {11}Referenzen}{9}
-\contentsline {section}{\numberline {12}Abbildungen}{9}
+\contentsline {section}{\numberline {9}BSP in der Softwareentwicklung}{9}
+\contentsline {section}{\numberline {10}Fazit}{9}
+\contentsline {section}{\numberline {11}Referenzen}{10}
+\contentsline {section}{\numberline {12}Abbildungen}{10}
