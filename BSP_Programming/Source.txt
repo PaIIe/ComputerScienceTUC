@@ -1,8 +1,0 @@
-http://www.cse.unt.edu/~tarau/teaching/parpro/papers/Bulk%20synchronous%20parallel.pdf
-
-http://www.computingreviews.com/hottopic/hottopic_essay.cfm?htname=BSP
-
-Look for SPMD -> BSP is SPMD!
-
-Programming Model
-https://www.mcs.anl.gov/~itf/dbpp/text/node9.html
