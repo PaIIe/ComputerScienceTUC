@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+    <head>
+        <meta charset="UTF-8" />
+        <style>
+            body {
+                font: 14px normal Arial, sans-serif;
+                color: #000000;
+            }
+        </style>
+        <script>
+            function postData() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (xhttp.readyState == 4 && xhttp.status == 200) {
+                        document.getElementById("demo").innerHTML = xhttp.responseText;
+                    }
+                };
+                xhttp.open("POST", "echo.php", true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send(document.getElementById('data').value);
+                alert('POST sent');
+            }
+            function postDataSync() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("POST", "echo.php", false);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send(document.getElementById('data').value);
+                document.getElementById("demo").innerHTML = xhttp.responseText;
+                alert('POST sent');
+            }
+        </script>
+    </head>
+    <body>
+        <form method="POST" action="echo.php">
+            <label for="fname">Firstname:</label> <input id="fname" type="text" name="firstname" value="Henry"><br>
+            <label for="lname">Lastname:</label> <input id="lname" type="text" name="lastname" value="Ford">
+            <button type="submit">Do post</button>
+        </form>
+        <hr>
+        <label for="data">Data:</label> <input type="text" id="data" value="firstname=Henry&amp;lastname=Ford" style="width:300px">
+        <button onclick="postData()">Post data async</button><button onclick="postDataSync()">Post data sync</button><br><br>
+        <textarea id="demo" style="width:405px;height:150px"></textarea>
+    </body>
+</html>

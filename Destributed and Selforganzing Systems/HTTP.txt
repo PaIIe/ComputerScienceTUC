@@ -1,0 +1,54 @@
+What is HTTP?
+
+The Hypertext Transfer Protocol (HTTP) is designed to enable communications between clients and servers.
+
+HTTP works as a request-response protocol between a client and server.
+
+A web browser may be the client, and an application on a computer that hosts a web site may be the server.
+
+Example: A client (browser) submits an HTTP request to the server; then the server returns a response to the client. The response contains status information about the request and may also contain the requested content.
+
+Two HTTP Request Methods: GET and POST
+
+Two commonly used methods for a request-response between a client and server are: GET and POST.
+
+    GET - Requests data from a specified resource
+    POST - Submits data to be processed to a specified resource
+
+The GET Method
+
+Note that the query string (name/value pairs) is sent in the URL of a GET request:
+/test/demo_form.asp?name1=value1&name2=value2
+
+Some other notes on GET requests:
+
+    GET requests can be cached
+    GET requests remain in the browser history
+    GET requests can be bookmarked
+    GET requests should never be used when dealing with sensitive data
+    GET requests have length restrictions
+    GET requests should be used only to retrieve data
+
+The POST Method
+
+Note that the query string (name/value pairs) is sent in the HTTP message body of a POST request:
+POST /test/demo_form.asp HTTP/1.1
+Host: w3schools.com
+name1=value1&name2=value2
+
+Some other notes on POST requests:
+
+    POST requests are never cached
+    POST requests do not remain in the browser history
+    POST requests cannot be bookmarked
+    POST requests have no restrictions on data length
+
+Other HTTP Request Methods
+
+The following table lists some other HTTP request methods:
+Method 	Description
+HEAD 	Same as GET but returns only HTTP headers and no document body
+PUT 	Uploads a representation of the specified URI
+DELETE 	Deletes the specified resource
+OPTIONS 	Returns the HTTP methods that the server supports
+CONNECT 	Converts the request connection to a transparent TCP/IP tunnel

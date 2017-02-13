@@ -1,0 +1,11 @@
+Post/Redirect/Get
+Post/Redirect/Get (PRG) design pattern that prevents some duplicate form submissions. PRG supports bookmarks and the refresh button in a predictable way that does not create duplicate form submissions.
+
+When a web form is submitted to a server through an HTTP POST request, a web user that attempts to refresh the server response in certain user agents can cause the contents of the original HTTP POST request to be resubmitted, possibly causing undesired results, such as a duplicate web purchase.[1]
+
+To avoid this problem, many web developers use the PRG pattern[2] — instead of returning a web page directly, the POST operation returns a redirection command. The HTTP 1.1 specification introduced the HTTP 303 ("See other") response code to ensure that in this situation, the web user's browser can safely refresh the server response without causing the initial HTTP POST request to be resubmitted. However most common commercial applications in use today (new and old alike) still continue to issue HTTP 302 ("Found") responses in these situations.
+
+The PRG pattern cannot address every scenario of duplicate form submission. Some known duplicate form submissions that PRG cannot solve are:
+
+If a web user refreshes before the initial submission has completed because of server lag, resulting in a duplicate HTTP POST request in certain user agents.
+

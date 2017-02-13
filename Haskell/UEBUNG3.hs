@@ -41,3 +41,5 @@ primeTwin' n = [(i-2,i) | i <- [3..n], prime(i-2) && prime i]
 --d)
 splitList :: [(Int,Int)] -> ([Int],[Int])
 splitList L = ([a|(a,temp) <- L],[b|(temp,b) <-[])
+
+
