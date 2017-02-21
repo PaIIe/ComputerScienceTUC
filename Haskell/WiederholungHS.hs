@@ -19,3 +19,6 @@ calcOps (op:ops) x y = (op x y) : (calcOps(ops x y))
 
 doublePs :: [Int] -> [Int]
 doublePs xs = [2*x | x <- xs, x > 0 ]
+
+spaces :: Int -> [Char]
+spaces n = [' ' | i <- [1..n]]
